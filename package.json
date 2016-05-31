@@ -13,7 +13,7 @@
   "scripts": {
     "build": "NODE_ENV='production' webpack --progress --display-error-details",
     "postinstall": "typings install",
-    "server": "webpack-dev-server --inline --hot --progress --display-error-details --port 3000 --open",
+    "server": "webpack-dev-server --inline --progress --display-error-details --port 3000 --open",
     "start": "npm run server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typings": "typings"
