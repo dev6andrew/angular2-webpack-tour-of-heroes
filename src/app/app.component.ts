@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 
+import { Hero } from './hero';
+import { HeroDetailComponent } from './hero-detail.component';
+
 @Component({
   selector: 'my-app',
   template: require('./app.component.html'),
-  styles: [require('./app.component.scss')]
+  styles: [require('./app.component.scss')],
+  directives: [HeroDetailComponent]
 })
 
 export class AppComponent {
@@ -14,11 +18,6 @@ export class AppComponent {
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-}
-
-export class Hero {
-  id: number;
-  name: string;
 }
 
 const HEROES: Hero[] = [
