@@ -1,0 +1,1 @@
+Add images to be included in your styles to this folder.

@@ -1,0 +1,1 @@
+Add any global assets here. This entire folder will be copied over to `dist/public/` during a build.
