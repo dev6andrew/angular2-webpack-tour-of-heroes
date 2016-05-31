@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styles: [require('./app.component.scss')]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
+  title: string = 'Tour of Heroes';
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
 
-  constructor() { }
+}
 
-  ngOnInit(): void { }
+export class Hero {
+  id: number;
+  name: string;
 }
