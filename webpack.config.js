@@ -120,24 +120,22 @@ const config = {
       // Compile Global SCSS files to CSS files
       // sass-loader: https://github.com/jtangelder/sass-loader
       // postcss-loader: https://github.com/postcss/postcss-loader
-      // resolve-url-loader: https://github.com/bholloway/resolve-url-loader
       // css-loader: https://github.com/webpack/css-loader
       // style-loader: https://github.com/webpack/style-loader
       {
         test: /\.s(c|a)ss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!resolve-url-loader!postcss-loader!sass-loader'),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader!sass-loader'),
         exclude: /app\//
       },
 
       // Compile Component SCSS files to CSS
       // sass-loader: https://github.com/jtangelder/sass-loader
       // postcss-loader: https://github.com/postcss/postcss-loader
-      // resolve-url-loader: https://github.com/bholloway/resolve-url-loader
       // css-loader: https://github.com/webpack/css-loader
       // css-to-string-loader: https://github.com/smithad15/css-to-string-loader
       {
         test: /\.s(c|a)ss$/,
-        loaders: ['css-to-string-loader', 'css-loader?sourceMap', 'resolve-url-loader', 'postcss-loader', 'sass-loader'],
+        loaders: ['css-to-string-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader'],
         exclude: /styles\//
       },
 
@@ -188,11 +186,6 @@ const config = {
 
   // Configure settings for sass-loader
   sassLoader: {
-    sourceMap: true
-  },
-
-  // Configure settings for resolve-url-loader
-  resolveUrlLoader: {
     sourceMap: true
   },
 
