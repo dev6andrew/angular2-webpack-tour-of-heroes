@@ -1,7 +1,7 @@
 import { Hero } from './app/hero';
 
 export class InMemoryDataService {
-  createDb() {
+  createDb(): { heroes: Hero[] } {
     let heroes: Hero[] = [
       { id: 11, name: 'Mr. Nice' },
       { id: 12, name: 'Narco' },
