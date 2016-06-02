@@ -80,9 +80,9 @@ const config = {
 
     // Lint our SCSS files
     // Reference: https://github.com/alleyinteractive/sasslint-webpack-plugin
-    new SassLintPlugin({
-      ignorePlugins: ['extract-text-webpack-plugin']
-    })
+    // new SassLintPlugin({
+    //   ignorePlugins: ['extract-text-webpack-plugin']
+    // })
   ],
 
 
@@ -105,7 +105,7 @@ const config = {
           // These packages have problems with their sourcemaps
           __dirname + 'node_modules/rxjs',
           __dirname + 'node_modules/@angular2-material',
-          __dirname + 'node_modules/@angular',
+          __dirname + 'node_modules/@angular'
         ]
       }
     ],
