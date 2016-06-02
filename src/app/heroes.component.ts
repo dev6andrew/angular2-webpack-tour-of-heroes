@@ -11,7 +11,6 @@ import { HeroDetailComponent } from './hero-detail.component';
   styles: [require('./heroes.component.scss')],
   directives: [HeroDetailComponent]
 })
-
 export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];

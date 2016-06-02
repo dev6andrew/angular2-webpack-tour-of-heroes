@@ -9,7 +9,6 @@ import { HeroService } from './hero.service';
   template: require('./hero-detail.component.html'),
   styles: [require('./hero-detail.component.scss')]
 })
-
 export class HeroDetailComponent implements OnActivate {
   @Output() close: EventEmitter<Hero>;
   hero: Hero;

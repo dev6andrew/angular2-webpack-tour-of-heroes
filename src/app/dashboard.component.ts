@@ -26,6 +26,3 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['detail', hero.id]);
   }
 }
-
-
-
