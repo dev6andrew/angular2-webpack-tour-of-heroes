@@ -23,11 +23,16 @@
       true,
       "spaces"
     ],
-    "interface-name": false,
+    "interface-name": [
+      true,
+      "always-prefix"
+    ],
     "jsdoc-format": true,
     "label-position": true,
     "label-undefined": true,
-    "max-line-length": false,
+    "max-line-length": [
+      false
+    ],
     "member-access": false,
     "member-ordering": [
       true,
@@ -55,7 +60,11 @@
     "no-duplicate-variable": true,
     "no-empty": true,
     "no-eval": true,
-    "no-inferrable-types": false,
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
+    "no-trailing-comma": true,
     "no-internal-module": true,
     "no-null-keyword": false,
     "no-require-imports": false,
@@ -103,7 +112,6 @@
       "call-signature",
       "parameter",
       "property-declaration",
-      "variable-declaration",
       "member-variable-declaration"
     ],
     "typedef-whitespace": [

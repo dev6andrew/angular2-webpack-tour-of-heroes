@@ -20,5 +20,9 @@ import { HeroDetailComponent } from './hero-detail.component';
   { path: '/', component: DashboardComponent }
 ])
 export class AppComponent {
-  title: string = 'Tour of Heroes';
+  title: string;
+
+  constructor() {
+    this.title = 'Tour of Heroes';
+  }
 }

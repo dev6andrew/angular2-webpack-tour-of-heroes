@@ -6,9 +6,11 @@ import { Hero } from './hero';
 
 @Injectable()
 export class HeroService {
-  private heroesUrl: string = 'app/heroes';
+  private heroesUrl: string;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    this.heroesUrl = 'app/heroes';
+  }
 
   getHeroes(): Promise<Hero[]> {
     return this.http.get(this.heroesUrl)
@@ -33,9 +35,9 @@ export class HeroService {
   }
 
   delete(hero: Hero): Promise<void> {
-    let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
 
-    let url: string = `${this.heroesUrl}/${hero.id}`;
+    let url = `${this.heroesUrl}/${hero.id}`;
 
     return this.http
       .delete(url, { headers })
@@ -50,7 +52,7 @@ export class HeroService {
   }
 
   private post(hero: Hero): Promise<Hero> {
-    let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
 
     return this.http
       .post(this.heroesUrl, JSON.stringify(hero), { headers })
@@ -60,9 +62,9 @@ export class HeroService {
   }
 
   private put(hero: Hero): Promise<Hero> {
-    let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
 
-    let url: string = `${this.heroesUrl}/${hero.id}`;
+    let url = `${this.heroesUrl}/${hero.id}`;
 
     return this.http
       .put(url, JSON.stringify(hero), { headers })
