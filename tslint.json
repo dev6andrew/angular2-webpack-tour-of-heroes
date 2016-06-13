@@ -64,7 +64,6 @@
       true,
       "ignore-params"
     ],
-    "no-trailing-comma": true,
     "no-internal-module": true,
     "no-null-keyword": false,
     "no-require-imports": false,
