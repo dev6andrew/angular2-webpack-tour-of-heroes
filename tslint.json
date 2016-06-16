@@ -180,6 +180,7 @@
       "camelCase"
     ],
     "component-class-suffix": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+    "import-destructuring-spacing": true
   }
 }
