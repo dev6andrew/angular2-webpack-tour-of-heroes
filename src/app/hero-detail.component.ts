@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { OnActivate, RouteSegment, Router} from '@angular/router';
-
-import { Hero } from './hero';
+import { Component, EventEmitter, Output, OnDestroy, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { Hero } from './hero.model';
 import { HeroService } from './hero.service';
 
 @Component({
@@ -9,29 +10,38 @@ import { HeroService } from './hero.service';
   template: require('./hero-detail.component.html'),
   styles: [require('./hero-detail.component.scss')]
 })
-export class HeroDetailComponent implements OnActivate {
+export class HeroDetailComponent implements OnInit, OnDestroy {
   @Output() close: EventEmitter<Hero>;
   hero: Hero;
-  navigated: boolean;
-  error: any;
+  private navigated: boolean;
+  private error: any;
+  private heroId: Observable<number>;
+  private heroIdSubscription: Subscription;
 
   constructor(
     private heroService: HeroService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.close = new EventEmitter<Hero>();
-    this.hero = new Hero();
-    this.navigated = false;
+    this.heroId = route.params.map(params => +params['id']);
   }
 
-  routerOnActivate(currentRoute: RouteSegment): void {
-    let id: number = +currentRoute.getParam('id');
+  ngOnInit(): void {
+    this.heroIdSubscription = this.heroId.subscribe(id => {
+      if (id) {
+        this.navigated = true;
+        this.heroService.getHero(id)
+          .then(hero => this.hero = hero);
+      } else {
+        this.navigated = false;
+        this.hero = new Hero();
+      }
+    });
+  }
 
-    if (id) {
-      this.navigated = true;
-      this.heroService.getHero(id)
-        .then(hero => this.hero = hero);
-    }
+  ngOnDestroy(): void {
+    this.heroIdSubscription.unsubscribe();
   }
 
   goBack(savedHero: Hero = null): void {
