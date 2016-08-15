@@ -5,8 +5,8 @@ import { HeroService } from './hero.service';
 
 @Component({
   selector: 'my-app',
-  template: require('./app.component.html'),
-  styles: [require('./app.component.scss')],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
   directives: [ROUTER_DIRECTIVES],
   providers: [HeroService]
 })

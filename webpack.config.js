@@ -120,7 +120,7 @@ const config = {
       // Reference: https://github.com/s-panferov/awesome-typescript-loader
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
       },
 
       // Compile Global SCSS files to CSS files

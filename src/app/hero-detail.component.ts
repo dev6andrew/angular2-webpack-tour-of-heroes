@@ -7,8 +7,8 @@ import { HeroService } from './hero.service';
 
 @Component({
   selector: 'my-hero-detail',
-  template: require('./hero-detail.component.html'),
-  styles: [require('./hero-detail.component.scss')]
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.scss']
 })
 export class HeroDetailComponent implements OnInit, OnDestroy {
   @Output() close: EventEmitter<Hero>;

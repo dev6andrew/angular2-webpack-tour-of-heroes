@@ -21,6 +21,7 @@
     "@types/jasmine": "^2.2.31",
     "@types/node": "^6.0.33",
     "@types/webpack": "^1.12.31",
+    "angular2-template-loader": "^0.4.0",
     "autoprefixer": "^6.4.0",
     "awesome-typescript-loader": "^2.2.1",
     "clean-webpack-plugin": "^0.1.10",
