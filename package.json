@@ -2,14 +2,13 @@
   "name": "angular2-tour-of-heroes",
   "version": "1.0.0",
   "author": {
-    "name": "DEV6",
-    "url": "http://dev6.com"
+    "name": "Andrew Smith"
   },
   "description": "",
   "repository": {
     "url": ""
   },
-  "license": "",
+  "license": "MIT",
   "scripts": {
     "build": "NODE_ENV='production' webpack --progress --display-error-details",
     "server": "webpack-dev-server --inline --progress --display-error-details --port 3000 --open",
