@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, OnDestroy, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Hero } from './hero.model';
@@ -20,11 +20,10 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private heroService: HeroService,
-    private router: Router,
     private route: ActivatedRoute
   ) {
     this.close = new EventEmitter<Hero>();
-    this.heroId = route.params.map(params => +params['id']);
+    this.heroId = this.route.params.map(params => +params['id']);
   }
 
   ngOnInit(): void {
