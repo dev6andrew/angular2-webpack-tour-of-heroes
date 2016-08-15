@@ -1,11 +1,10 @@
 import { enableProdMode, provide } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS, XHRBackend } from '@angular/http';
-import { provideRouter } from '@angular/router';
 import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
 
 import { InMemoryDataService } from './in-memory-data.service';
-import { AppComponent, routes } from './app';
+import { AppComponent, APP_ROUTER_PROVIDERS } from './app';
 
 import './styles/main.scss';
 
@@ -17,5 +16,5 @@ bootstrap(AppComponent, [
   HTTP_PROVIDERS,
   provide(XHRBackend, { useClass: InMemoryBackendService }),
   provide(SEED_DATA, { useClass: InMemoryDataService }),
-  provideRouter(routes)
+  APP_ROUTER_PROVIDERS
 ]);

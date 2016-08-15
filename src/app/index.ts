@@ -6,4 +6,4 @@ export * from './hero-detail.component';
 export * from './hero.model';
 export * from './hero.service';
 export * from './heroes.component';
-export * from './routes';
+export * from './app.routes';
