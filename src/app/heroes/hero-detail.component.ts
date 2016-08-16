@@ -44,8 +44,6 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
   }
 
   goBack(savedHero: Hero = null): void {
-    // Does not load data in heroes list when navigating back using Safari
-    // Reference: https://github.com/angular/angular/issues/7722
     this.close.emit(savedHero);
     if (this.navigated) {
       window.history.back();

@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Hero } from './hero.model';
 import { HeroService } from './hero.service';
-import { HeroDetailComponent } from './hero-detail.component';
 
 @Component({
-  selector: 'my-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss'],
-  directives: [HeroDetailComponent]
+  templateUrl: './hero-list.component.html',
+  styleUrls: ['./hero-list.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class HeroListComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
   addingHero: boolean;
@@ -19,7 +16,8 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +30,7 @@ export class HeroesComponent implements OnInit {
   }
 
   goToDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+    this.router.navigate([this.selectedHero.id], {relativeTo: this.route});
   }
 
   addHero(): void {
