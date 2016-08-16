@@ -49,10 +49,6 @@ const config = {
 
 
   plugins: [
-    // Cleans out your build folder
-    // Reference: https://github.com/johnagan/clean-webpack-plugin
-    new CleanWebpackPlugin(['dist']),
-
     // Splits vendor and polyfill modules into their respective bundles
     // Reference: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
     new webpack.optimize.CommonsChunkPlugin({
@@ -247,6 +243,10 @@ if (isProduction) {
   config.debug = false;
 
   config.plugins.push(
+    // Cleans out your build folder
+    // Reference: https://github.com/johnagan/clean-webpack-plugin
+    new CleanWebpackPlugin(['dist']),
+
     // Add global variables to use in your code
     // Reference: https://github.com/ArikMaor/extended-define-webpack-plugin
     new ExtendedDefineWebpackPlugin(prodEnvVars),
