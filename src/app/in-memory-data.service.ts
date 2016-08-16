@@ -1,4 +1,4 @@
-import { Hero } from './app/hero.model';
+import { Hero } from './hero.model';
 
 export class InMemoryDataService {
   createDb(): { heroes: Hero[] } {

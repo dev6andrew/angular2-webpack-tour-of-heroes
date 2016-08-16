@@ -7,3 +7,4 @@ export * from './hero.model';
 export * from './hero.service';
 export * from './heroes.component';
 export * from './app.routes';
+export * from './app.module';
