@@ -1,4 +1,4 @@
-import { NgModule, provide } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, XHRBackend } from '@angular/http';
 
@@ -23,8 +23,8 @@ import { HeroesModule } from './heroes';
   ],
   bootstrap: [AppComponent],
   providers: [
-    provide(XHRBackend, { useClass: InMemoryBackendService }),
-    provide(SEED_DATA, { useClass: InMemoryDataService })
+    {provide: XHRBackend, useClass: InMemoryBackendService },
+    {provide: SEED_DATA, useClass: InMemoryDataService }
   ]
 })
 export class AppModule { }
